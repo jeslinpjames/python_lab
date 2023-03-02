@@ -42,9 +42,17 @@ def min_max_area(path):
         sepal_area.clear()
         petal_area.clear()       
 
-
+def sort_area(path):
+    with open(path,'r')as f:
+        data = json.load(f)
+    for i in data:
+        totalArea=(i['sepalLength']*i['sepalWidth'])+(i['petalLength']*i['petalWidth'])
+        i.update({'TotalArea':round(totalArea,2)})
+    print (data)
+    
 listdata=read_json(file_path)
 dictdata=list_to_dict(file_path)
 show_setosa(file_path)
 min_max_area(file_path)
+sort_area(file_path)
     
