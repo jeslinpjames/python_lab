@@ -36,13 +36,11 @@ def min_max_area(path):
         for j in datalist:
             if j['species']==i:
                 sepal_area.append(j['sepalLength']*j['sepalWidth'])
-                petal_area.append(j['petalLength']*j['petalLength'])
+                petal_area.append(j['petalLength']*j['petalWidth'])
         print("Maximum sepal area in ",i," species is : ",round(max(sepal_area),2))
         print("Minimum petal area in ",i," species is : ",round(min(petal_area)),2)
         sepal_area.clear()
         petal_area.clear()       
-
-    print(species_names)    
 
 
 listdata=read_json(file_path)
