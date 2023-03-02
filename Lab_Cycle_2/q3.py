@@ -6,3 +6,8 @@ def read_json(file_path):
     for x in data:
         print(x,'\n')
     return data
+def list_to_dict(filepath):
+    with open(filepath,'r') as f:
+        data=json.load(f)
+    return data
+    
