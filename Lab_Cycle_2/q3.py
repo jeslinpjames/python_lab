@@ -49,7 +49,7 @@ def sort_area(path):
         totalArea=(i['sepalLength']*i['sepalWidth'])+(i['petalLength']*i['petalWidth'])
         i.update({'TotalArea':round(totalArea,2)})
     print (data)
-    
+       
 listdata=read_json(file_path)
 dictdata=list_to_dict(file_path)
 show_setosa(file_path)
