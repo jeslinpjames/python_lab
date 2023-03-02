@@ -13,7 +13,13 @@ def list_to_dict(filepath):
     print("The file as a list of dictionary objects is : \n")
     print (dictdata)
     return dictdata
+def show_setosa(data_list):
+    print("\nDetails of all flowers with species name setosa is : \n")
+    for x in data_list:
+        if x["species"]=='setosa':
+            print (x)
 
 listdata=read_json(file_path)
 dictdata=list_to_dict(file_path)
+show_setosa(listdata)
     
