@@ -48,11 +48,15 @@ def sort_area(path):
     for i in data:
         totalArea=(i['sepalLength']*i['sepalWidth'])+(i['petalLength']*i['petalWidth'])
         i.update({'TotalArea':round(totalArea,2)})
-    print (data)
-       
+    sortedlist=sorted(data,key=lambda x:x['TotalArea'])  
+    for i in sortedlist:
+        print(i,"\n")    
+    return sortedlist
+
+
 listdata=read_json(file_path)
 dictdata=list_to_dict(file_path)
 show_setosa(file_path)
 min_max_area(file_path)
-sort_area(file_path)
+sorted_list =sort_area(file_path)
     
