@@ -20,13 +20,23 @@ class Box:
 
     def find_area(self):
         self.area=2*((self.length*self.breadth)+(self.breadth*self.height)+(self.height*self.length))
-        print("Area=",self.area)
+        # print("Area=",self.area)
         return self.area
     def find_volume(self):
         self.volume=self.length*self.breadth*self.height
-        print ("Volume=",self.volume)
+        # print ("Volume=",self.volume)
         return self.volume
-
-t=Box(12,54)
-t.find_area()
-t.find_volume()
+    
+import random
+n=int(input("Enter the number of boxes needed : "))
+b=[Box(random.randint(1,100),random.randint(1,100),random.randint(1,100))for i in range (n)]
+ar=[i.find_area()for i in  (b)]
+vol=[i.find_volume()for i in (b)]
+ratio=[]
+for i in range (0,n):
+    ratio.append(round(vol[i]/ar[i],3))
+pos=ratio.index(max(ratio))
+print("The box with maximum volume:area ratio is = ")
+print("Area = ",ar[pos])
+print("Volume =",vol[pos])
+print("Ratio =",ratio[pos])  
