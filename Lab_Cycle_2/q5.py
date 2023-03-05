@@ -17,9 +17,25 @@ class Cylinder(threeD_shapes):
     def find_volume(self):
         self.volume=3.14*self.r*self.r*self.h
 
+class Sphere(threeD_shapes):
+    r=None
+    area=None
+    volume=None
+    def __init__(self,radius):
+        self.r=radius
+    def find_area(self):
+        self.area=4*3.14*self.r*self.r
+    def find_volume(self):
+        self.volume=(4/3)*3.14*self.r*self.r*self.r
+    
 obj1=Cylinder(float(input("Enter the radius of the Cylinder : ")),float(input("Enter the Height of the Cylinder : ")))
 obj1.find_area()
 obj1.find_volume()
 obj1.printArea()
 obj1.printVolume()
 
+obj2=Sphere(float(input("Enter the radius of the sphere : ")))
+obj2.find_area()
+obj2.find_volume()
+obj2.printArea()
+obj2.printVolume()
