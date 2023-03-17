@@ -33,6 +33,8 @@ def prod(n):
   return(s)
 
 n=int(input("Enter a 4 digit number:"))
+while (n<1000 or n>9999):
+  n=int(input("Invalid input, Please enter a 4 digit number : "))
 s=sum(n)#To call the sum functio
 print("The Sum of Digits=",s)
 r=reverse(n)#To call the reverse function
