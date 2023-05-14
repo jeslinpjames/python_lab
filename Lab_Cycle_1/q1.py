@@ -40,4 +40,4 @@ print("The Sum of Digits=",s)
 r=reverse(n)#To call the reverse function
 print("The Reverse of the number=",r)
 s1=prod(n)#To call the prod function
-print("The diffrence of product of even and odd numbers=",s1)
+print("The difference of product of even and odd numbers=",s1)

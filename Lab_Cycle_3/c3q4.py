@@ -72,23 +72,16 @@ class Vehicle_Collection:
             print(f"Engine Number: {v.engine_number}, Model: {v.model}, Type: {v.vehicle_type}, Mileage: {v.mileage}, Vendor: {v.vendor}, Registration Number: {v.reg_number}, Owner Name: {v.owner_name}")
 
 
-    def report(self):
+    def report(self, filename):
         pdf = FPDF()
         pdf.add_page()
-        pdf.set_font("Arial",size = 10)
-        pdf.cell(200,10,ln = 2,align = "C",txt = "No.\tEngNo.\tModel\tType\tMileage\tVendor\tRegNo.\tOwner\n")
+        pdf.set_font("Arial", size=10)
+        pdf.cell(200, 10, ln=1, align="C", txt="No.\tEngNo.\tModel\tType\tMileage\tVendor\tRegNo.\tOwner\n")
 
-        for entries in self.vehicles:
-            add_text = ""
-            print(entries)
-            add_text += str(entries)
-            add_text += "\t"
-            pdf.cell(200,10,ln = 2,align = "C",txt = add_text)
-        filename = input("Enter pdf name : ")
+        for i, entry in enumerate(self.vehicles, start=1):
+            pdf.cell(200, 10, ln=1, align="C", txt=f"{i}\t{entry.engine_number}\t{entry.model}\t{entry.vehicle_type}\t{entry.mileage}\t{entry.vendor}\t{entry.reg_number}\t{entry.owner_name}\n")
+
         pdf.output(filename)
-
-
-
 
 def main():
     choice = 1
@@ -118,9 +111,9 @@ def main():
         elif(choice_2==8):
             V.filter_by_attribute()
         elif(choice_2==9):
-            V.report()
+            V.report('report.pdf')
         elif(choice_2==10):
-            continue
+            break
         else :
             print("Wrong Choice!")
         print("---------------------------------------")
@@ -133,7 +126,7 @@ def main():
 
 
 
-main()
+# main()
 
 
 
