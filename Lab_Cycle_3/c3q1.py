@@ -44,8 +44,6 @@ def draw_markers():
             if marker == -1:
                 screen.blit(o_image, (image_cord[i][j] * 100 - o_width / 2, image_cord[j][i] * 100 - o_height / 2))
 
-
-
 def check_winner():
     global winner
     global game_over
@@ -108,13 +106,6 @@ def display_winner():
 def clear_marker():
     global markers
     markers = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-
-
-        
-         
-
-
-
 
 
 mouse_index=(0,0)
